@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,83 +9,125 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
+      background: url('https://images.unsplash.com/photo-1599423300746-b62533397364') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
     header {
-      background-color: #1f3b67;
-      color: white;
+      display: flex;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      text-align: center;
+    }
+    header img {
+      height: 100px;
+      margin-right: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
     }
     nav {
-      display: flex;
-      justify-content: center;
-      background-color: #334e7e;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 10px;
     }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      background-color: #2a3e64;
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      margin: 0 10px;
+      cursor: pointer;
     }
     .content {
-      padding: 40px 20px;
       max-width: 800px;
-      margin: auto;
-      background-color: white;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+      padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #1f3b67;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    .cta:hover {
-      background-color: #162d4f;
     }
     footer {
-      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      background-color: #e0e6f0;
-      margin-top: 40px;
-      line-height: 1.8;
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button[type="submit"] {
+      background-color: #1f3b67;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.getElementById('en').style.display = lang === 'en' ? 'block' : 'none';
+      document.getElementById('he').style.display = lang === 'he' ? 'block' : 'none';
+    }
+  </script>
 </head>
-<body>
+<body onload="switchLang('en')">
   <header>
+    <img src="logo.png" alt="T.Q.P. LTD Logo">
     <h1>T.Q.P. LTD</h1>
-    <p>טופ איכות ביצוע בע"מ</p>
   </header>
 
   <nav>
-    <a href="#about">אודות</a>
-    <a href="#contact">צור קשר</a>
+    <button onclick="switchLang('en')">English</button>
+    <button onclick="switchLang('he')">עברית</button>
   </nav>
 
-  <div class="content" id="about">
-    <h2>על החברה</h2>
-    <p>
-      טופ איכות ביצוע בע"מ, תאגיד בניין מורשה רשות האוכלוסין וההגירה, מתמחה בהעסקה והשמה של עובדים זרים מקצועיים ומנוסים בענף הבנייה. אנו מחויבים לאיכות, אמינות וסטנדרטים גבוהים של שירות עבור קהל הלקוחות שלנו – חברות קבלניות מובילות בישראל.
-    </p>
-    <a href="#contact" class="cta">צור קשר</a>
+  <div class="content" id="en">
+    <h2>About Us</h2>
+    <p>T.Q.P. LTD is a licensed manpower corporation by the Population and Immigration Authority. We specialize in providing experienced foreign workers for the construction industry. Our mission is to deliver top-quality, professional labor services to leading contractors across Israel.</p>
+
+    <h3>Contact</h3>
+    <p>Contact Person: David Shorki</p>
+    <p>Phone: <a href="tel:0523000666">052-3000666</a></p>
+    <p>Email: <a href="mailto:top.q.p2024@gmail.com">top.q.p2024@gmail.com</a></p>
+    <p>Address: 20 HaYarok St, Kannot, Israel</p>
+
+    <form action="mailto:top.q.p2024@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="4" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </div>
 
-  <footer id="contact">
+  <div class="content" id="he" style="display:none; direction: rtl; text-align: right;">
+    <h2>אודות</h2>
+    <p>טופ איכות ביצוע בע"מ הינו תאגיד מורשה מטעם רשות האוכלוסין וההגירה המתמחה בהשמת עובדים זרים מקצועיים ומנוסים בענף הבנייה. אנו מחויבים לאיכות, אמינות ושירות ברמה הגבוהה ביותר עבור קבלנים מובילים בישראל.</p>
+
     <h3>צור קשר</h3>
     <p>איש קשר: דוד שורקי</p>
     <p>טלפון: <a href="tel:0523000666">052-3000666</a></p>
     <p>מייל: <a href="mailto:top.q.p2024@gmail.com">top.q.p2024@gmail.com</a></p>
     <p>כתובת: הירוק 20, כנות, ישראל</p>
+
+    <form action="mailto:top.q.p2024@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="שם מלא" required>
+      <input type="email" name="email" placeholder="אימייל" required>
+      <textarea name="message" rows="4" placeholder="הודעה" required></textarea>
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 T.Q.P. LTD. All rights reserved.
   </footer>
 </body>
 </html>
